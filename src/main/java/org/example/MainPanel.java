@@ -2,16 +2,15 @@ package org.example;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainPanel extends JPanel {
     private static final int BUTTON_WIDTH = 100;
     private static final int BUTTON_HEIGHT = 30;
     private static final int BUTTON_X = 225;
     private static final int INITIAL_BUTTON_Y = 50;
+    private static final int MARGIN_FROM_BUTTON = 50;
 
-    private JButton eurUsd;
+    private JButton usdEur;
     private JButton gbpUsd;
     private JButton usdJpy;
     private JButton usdIls;
@@ -23,48 +22,56 @@ public class MainPanel extends JPanel {
         this.setVisible(true);
         this.setBackground(Color.gray);
 
-        this.eurUsd = new JButton("EUR/USD ");
-        this.eurUsd.setBounds(BUTTON_X, INITIAL_BUTTON_Y, BUTTON_WIDTH, BUTTON_HEIGHT);
-        Utils.addButton(this, eurUsd);
+        this.usdEur = new JButton(Utils.USD_EUR);
+        this.usdEur.setBounds(BUTTON_X, INITIAL_BUTTON_Y, BUTTON_WIDTH, BUTTON_HEIGHT);
+        Utils.addButton(this, usdEur);
 
-        this.gbpUsd = new JButton("GBP/USD");
-        this.gbpUsd.setBounds(BUTTON_X, INITIAL_BUTTON_Y + 50, BUTTON_WIDTH, BUTTON_HEIGHT);
+        this.gbpUsd = new JButton(Utils.GBP_USD);
+        this.gbpUsd.setBounds(BUTTON_X, INITIAL_BUTTON_Y + MARGIN_FROM_BUTTON, BUTTON_WIDTH, BUTTON_HEIGHT);
         Utils.addButton(this, gbpUsd);
 
-        this.usdJpy = new JButton("USD/JPY");
-        this.usdJpy.setBounds(BUTTON_X, INITIAL_BUTTON_Y + 100, BUTTON_WIDTH, BUTTON_HEIGHT);
+        this.usdJpy = new JButton(Utils.USD_JPY);
+        this.usdJpy.setBounds(BUTTON_X, INITIAL_BUTTON_Y + 2 * MARGIN_FROM_BUTTON, BUTTON_WIDTH, BUTTON_HEIGHT);
         Utils.addButton(this, usdJpy);
 
-        this.usdIls = new JButton("USD/ILS");
-        this.usdIls.setBounds(BUTTON_X, INITIAL_BUTTON_Y + 150, BUTTON_WIDTH, BUTTON_HEIGHT);
+        this.usdIls = new JButton(Utils.USD_ILS);
+        this.usdIls.setBounds(BUTTON_X, INITIAL_BUTTON_Y + 3 * MARGIN_FROM_BUTTON, BUTTON_WIDTH, BUTTON_HEIGHT);
         Utils.addButton(this, usdIls);
 
-        this.eurIls = new JButton("EUR/ILS");
-        this.eurIls.setBounds(BUTTON_X, INITIAL_BUTTON_Y + 200, BUTTON_WIDTH, BUTTON_HEIGHT);
+        this.eurIls = new JButton(Utils.EUR_ILS);
+        this.eurIls.setBounds(BUTTON_X, INITIAL_BUTTON_Y + 4 * MARGIN_FROM_BUTTON, BUTTON_WIDTH, BUTTON_HEIGHT);
         Utils.addButton(this, eurIls);
 
 
         this.eurIls.addActionListener((event) -> {
-            DisplayPanel.setNamename(eurIls.getText());
+            DisplayPanel.setUserChoice(Utils.EUR_ILS);
             Window.changePanel(Window.subMenu, this);
+            DisplayPanel.addNecessaryData();
         });
 
         this.usdJpy.addActionListener((event) -> {
+            DisplayPanel.setUserChoice(Utils.USD_JPY);
             Window.changePanel(Window.subMenu, this);
+            DisplayPanel.addNecessaryData();
         });
 
         this.usdIls.addActionListener((event) -> {
+            DisplayPanel.setUserChoice(Utils.USD_ILS);
             Window.changePanel(Window.subMenu, this);;
+            DisplayPanel.addNecessaryData();
         });
 
         this.gbpUsd.addActionListener((event) -> {
+            DisplayPanel.setUserChoice(Utils.GBP_USD);
             Window.changePanel(Window.subMenu, this);
+            DisplayPanel.addNecessaryData();
         });
 
-        this.eurUsd.addActionListener((event) -> {
+        this.usdEur.addActionListener((event) -> {
+            DisplayPanel.setUserChoice(Utils.USD_EUR);
             Window.changePanel(Window.subMenu, this);
+            DisplayPanel.addNecessaryData();
         });
     }
 
 }
-

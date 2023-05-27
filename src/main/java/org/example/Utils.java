@@ -7,17 +7,23 @@ import java.util.Map;
 
 public class Utils {
     public final static String SITE_URL = "https://il.investing.com/currencies/";
+    public final static String USD_EUR= "USD/EUR";
+    public final static String GBP_USD= "GBP/USD";
+    public final static String USD_JPY= "USD/JPY";
+    public final static String USD_ILS= "USD/ILS";
+    public final static String EUR_ILS= "EUR/ILS";
     public static final Map<String , String> currency = new HashMap<>(){{
-        put("USD/EUR" ,"pair_1");
-        put("GBP/USD" , "pair_2");
-        put("USD/JPY" , "pair_3");
-        put("USD/ILS" , "pair_9");
-        put("EUR/ILS" , "pair_10");
+        put(USD_EUR ,"pair_1");
+        put(GBP_USD , "pair_2");
+        put(USD_JPY , "pair_3");
+        put(USD_ILS , "pair_63");
+        put(EUR_ILS , "pair_64");
     }
     };
+
     public static void sleep (int seconds){
         try {
-            Thread.sleep(seconds*1000);
+            Thread.sleep(seconds*100);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

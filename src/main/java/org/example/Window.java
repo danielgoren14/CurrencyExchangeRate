@@ -23,7 +23,6 @@ public class Window extends JFrame {
 
     public static void changePanel(JPanel newPanel, JPanel oldPanel) {
         newPanel.setVisible(true);
-      //  newPanel.requestFocusInWindow();
         if (oldPanel!=null){
             oldPanel.setVisible(false);
         }
