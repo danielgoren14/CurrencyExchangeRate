@@ -40,6 +40,7 @@ public class DisplayPanel extends JPanel {
         this.backButton.addActionListener((event) -> {
             this.deleteUnnecessaryData();
             Window.changePanel(Window.mainMenu, this);
+            this.delaySlider.setValue(1);
         });
 
         this.conversionLabel = new JLabel();
