@@ -101,10 +101,10 @@ public class DisplayPanel extends JPanel {
         this.delaySlider = new JSlider();
         this.delaySlider.setBounds(100, 500, 350, 75);
         this.delaySlider.setMinimum(1);
-        this.delaySlider.setMaximum(1000);
-        this.delaySlider.setMajorTickSpacing(100);
+        this.delaySlider.setMaximum(11);
+        this.delaySlider.setMajorTickSpacing(2);
         this.delaySlider.setPaintTicks(true);
-        this.delaySlider.setMinorTickSpacing(25);
+        this.delaySlider.setMinorTickSpacing(1);
         this.delaySlider.setPaintLabels(true);
         this.delaySlider.setPaintTrack(true);
         this.delaySlider.setValue(1);
